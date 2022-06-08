@@ -44,10 +44,10 @@ app.get('/items', function (req, res) {
   res.json(response);
 });
 
-app.get('/items/*', function (req, res) {
+app.get('/items/:itemId', function (req, res) {
   // Add your code here
 
-  const itemId = req.params['itemId'];
+  const itemId = req.params.itemId;
   const customer = { 'id': itemId, 'name': "Item " + itemId };
   const response = {
     statusCode: 200,

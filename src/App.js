@@ -1,4 +1,4 @@
-import Amplify, { API } from 'aws-amplify';
+import Amplify, { API, Auth } from 'aws-amplify';
 import React, { useEffect, useState } from 'react';
 import awsconfig from './aws-exports';
 import logo from './logo.svg';
@@ -6,6 +6,7 @@ import './App.css';
 
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
+Auth.configure(awsconfig);
 
 const myAPI = "eveAPI"
 const path = '/items';
