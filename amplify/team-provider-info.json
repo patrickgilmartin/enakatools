@@ -10,6 +10,14 @@
       "StackName": "amplify-enakatools-dev-200354",
       "StackId": "arn:aws:cloudformation:us-west-1:754524628512:stack/amplify-enakatools-dev-200354/40723cd0-e6cf-11ec-bf79-06197b2dc565",
       "AmplifyAppId": "d3l20z3c6ipry5"
+    },
+    "categories": {
+      "function": {
+        "eveLambda": {
+          "deploymentBucketName": "amplify-enakatools-dev-200354-deployment",
+          "s3Key": "amplify-builds/eveLambda-325633767038786f7446-build.zip"
+        }
+      }
     }
   }
 }

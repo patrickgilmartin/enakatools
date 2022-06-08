@@ -1,11 +1,7 @@
 {
-  "httpMethod": "POST",
-  "path": "/item",
-  "queryStringParameters": {
-    "limit": "10"
-  },
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "body": "{\"msg\":\"Hello from the event.json body\"}"
+  "httpMethod": "GET",
+  "body": "{\"name\": \"Amplify\"}",
+  "path": "/items",
+  "resource": "/{proxy+}",
+  "queryStringParameters": {}
 }
