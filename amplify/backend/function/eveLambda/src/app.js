@@ -29,37 +29,19 @@ app.use(function (req, res, next) {
 app.get('/items', function (req, res) {
   // Add your code here
 
-  const itemId = req.params['itemId'];
-  const customer = { 'id': itemId, 'name': "Item " + itemId };
-  const response = {
-    statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*"
-    },
-    body: JSON.stringify(customer),
-  };
-
-  res.json(response);
+  res.json({ success: 'get call succeed!', url: req.url });
 });
 
 app.get('/items/:itemId', function (req, res) {
   // Add your code here
 
   const itemId = req.params.itemId;
-  const customer = { 'id': itemId, 'name': "Item " + itemId };
-  const response = {
-    statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "*"
-    },
-    body: JSON.stringify(customer),
+  const customer = {
+    'id': itemId,
+    'name': "Item " + itemId
   };
 
-  res.json(customer);
+  res.send(customer);
   // res.json({ success: 'get call succeed!', url: req.url });
 });
 

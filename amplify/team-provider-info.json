@@ -15,7 +15,22 @@
       "function": {
         "eveLambda": {
           "deploymentBucketName": "amplify-enakatools-dev-200354-deployment",
-          "s3Key": "amplify-builds/eveLambda-4d75316659414c6b4b4a-build.zip"
+          "s3Key": "amplify-builds/eveLambda-393036742f4a7455542f-build.zip"
+        }
+      },
+      "auth": {
+        "enakatools96c842bc": {
+          "userPoolId": "us-west-1_EUNmjZpAg",
+          "userPoolName": "amplify_backend_manager_dd1cfhwx2xr99",
+          "webClientId": "3dbs15qe2vvtr5uei3tu8v6pre",
+          "nativeClientId": "3dbs15qe2vvtr5uei3tu8v6pre",
+          "identityPoolId": "us-west-1:cbc6b2d7-f836-44b2-83f7-304215ad0c84",
+          "identityPoolName": "amplify_backend_manager_dd1cfhwx2xr99",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::754524628512:role/us-west-1_EUNmjZpAg-authRole",
+          "authRoleName": "us-west-1_EUNmjZpAg-authRole",
+          "unauthRoleArn": "arn:aws:iam::754524628512:role/amplify-enakatools-dev-200354-unauthRole",
+          "unauthRoleName": "amplify-enakatools-dev-200354-unauthRole"
         }
       }
     }

@@ -1,5 +1,5 @@
 import Amplify, { API, Auth } from 'aws-amplify';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import awsconfig from './aws-exports';
 import logo from './logo.svg';
 import './App.css';
@@ -48,7 +48,7 @@ function App() {
       {
         items.map((thisItem, index) => {
           return (
-            <div key={thisItem.restId}>
+            <div key={thisItem.id}>
               <span><b>ItemId:</b> {thisItem.id} - <b>ItemName</b>: {thisItem.name}</span>
             </div>)
         })

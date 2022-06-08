@@ -21,5 +21,14 @@
         }
       ]
     }
+  },
+  "auth": {
+    "enakatools96c842bc": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": true
+    }
   }
 }
