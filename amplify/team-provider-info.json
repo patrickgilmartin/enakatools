@@ -15,7 +15,7 @@
       "function": {
         "eveLambda": {
           "deploymentBucketName": "amplify-enakatools-dev-200354-deployment",
-          "s3Key": "amplify-builds/eveLambda-325633767038786f7446-build.zip"
+          "s3Key": "amplify-builds/eveLambda-444d4e58534d554a3262-build.zip"
         }
       }
     }
