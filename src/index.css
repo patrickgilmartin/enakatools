@@ -5,9 +5,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("../public/assets/images/Stars.jpg");
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#navbar {
+  transition: all .5s ease;
+}
+
+#hero {
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)), url(../public/assets/images/Tyrannis_background.jpg) 0% 58%/cover no-repeat;
+  padding: 250px !important;
+
+}
+
+#jumbo-logo {
+  float: left;
+  background-color: rgba(200, 200, 200, 0.12);
+  border-radius: 20px;
+  margin-right: 1em;
+  width: 145px;
+  height: 145px;
+}
+
+#eve-logo {
+  float: left;
+  background-color: rgba(200, 200, 200, 0.12);
+  border-radius: 4px;
+  margin-right: 1em;
+  width: 45px;
+  height: 45px;
+}
+
+.nav-item {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 25px;
 }

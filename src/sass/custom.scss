@@ -1,0 +1,41 @@
+$darkcyan: #009e73 !default;
+$eveblue: #30b2e6 !default;
+$orange: #f44336 !default;
+$caldariblue: #3c5f73 !default;
+$minmatarred: #5a3737 !default;
+$amarryellow: #bba183 !default;
+$gallenteblue: #576866 !default;
+$caldariblack: #191919 !default;
+
+$custom-colors: (
+    "darkcyan": $darkcyan,
+    "eveblue": $eveblue,
+    "orange": $orange,
+    "caldariblue": $caldariblue,
+    "minmatarred": $minmatarred,
+    "amarryellow": $amarryellow,
+    "gallenteblue": $gallenteblue,
+    "caldariblack": $caldariblack
+);
+
+$primary: $eveblue  !default;
+$secondary: $caldariblack  !default;
+$danger: $orange  !default;
+/*
+$success: $green  !default;
+$info: $cyan  !default;
+$warning: $yellow  !default;
+$danger: $red  !default;
+$light: $gray-100  !default;
+$dark: $gray-900  !default;
+*/
+
+$body-bg: #29353a;
+$body-color: #fff;
+
+@font-face {
+    font-family: Shentox;
+    src: url("../../public/assets/fonts/Shentox.ttf");
+}
+
+$font-family-base: 'Shentox';
