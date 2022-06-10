@@ -1,6 +1,6 @@
 import Amplify, { API, Auth } from 'aws-amplify';
 import React, { useState } from 'react';
-import awsconfig from '../aws-exports';
+import awsconfig from '../../aws-exports';
 import logo from './logo.svg';
 import './App.css';
 

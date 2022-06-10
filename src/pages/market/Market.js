@@ -1,28 +1,27 @@
 import Amplify, { API } from 'aws-amplify';
 import { useState, useEffect } from "react";
-import awsconfig from '../aws-exports';
-import AllMarketTable from "../components/market/AllTable";
+import awsconfig from '../../aws-exports';
+import AllMarketTable from "../../components/market/AllTable";
+import { zipArrays } from '../../helpers/helpers';
+import { getESIAllMarket } from "../../stores/market.store";
+import getESIItemNamesByID from "../../stores/items.store";
 
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
-
-const myAPI = "apie37b7d6f"
-const path = '/rest';
 
 function Market() {
     const [market, setMarket] = useState([]);
 
     useEffect(() => {
-        API.get(myAPI, path + "/market/allMarketNames")
-            .then(response => {
-                console.log(response)
-                let marketItems = [...market]
-                marketItems.push(response)
-                setMarket(marketItems);
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        async function fetchData() {
+            const marketItems = await getESIAllMarket();
+            const items = await getESIItemNamesByID(marketItems, "type_id");
+            const combinedMarketItems = zipArrays(marketItems, items, "type_id", "id");
+
+            console.log(combinedMarketItems)
+            setMarket(combinedMarketItems);
+        }
+        fetchData();
     }, []);
 
     return (

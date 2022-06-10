@@ -5,13 +5,13 @@ import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
 
 import './index.css';
-import "./sass/main.scss"
-import NavHeader from "./pages/NavHeader";
-import Footer from './pages/Footer';
-import Home from "./pages/Home";
-import Market from './pages/Market';
+import "./sass/main.scss";
+import NavHeader from "./pages/shared/NavHeader";
+import Footer from './pages/shared/Footer';
+import Home from "./pages/shared/Home";
+import Market from './pages/market/Market';
 import BootstrapTest from './pages/BootstrapTest';
-import App from './pages/App';
+import App from './pages/app/App';
 
 import reportWebVitals from './reportWebVitals';
 

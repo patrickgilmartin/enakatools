@@ -10,8 +10,8 @@ const AllMarketTable = (props) => (
             </tr>
         </thead>
         <tbody>
-            {props.market.map(item => (
-                <MarketRowItem key={item.userId} item={item} />
+            {props.market.map((item) => (
+                <MarketRowItem key={item.type_id} item={item} />
             ))}
         </tbody>
     </table>
