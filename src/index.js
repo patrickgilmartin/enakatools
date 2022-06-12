@@ -14,8 +14,18 @@ import BootstrapTest from './pages/BootstrapTest';
 import App from './pages/app/App';
 
 import reportWebVitals from './reportWebVitals';
+import { Toast, TOAST_THEME, TOAST_PLACEMENT, TOAST_TIMERS } from "bootstrap-toaster";
 
 Amplify.configure(awsExports);
+
+let toastOptions = {
+  maxToasts: 1,
+  placement: TOAST_PLACEMENT.BOTTOM_RIGHT,
+  theme: TOAST_THEME.DARK,
+  enableTimers: TOAST_TIMERS.DISABLED,
+  enableQueue: true
+}
+Toast.configure(toastOptions);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

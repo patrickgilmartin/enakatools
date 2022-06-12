@@ -1,14 +1,13 @@
+import { fetchData } from "../utils/ajax";
+
+
 /**
  * Returns a set of all region IDs.
  * 
  * @returns {array}
  */
 async function getESIRegions() {
-    let payload = await fetch("https://esi.evetech.net/latest/universe/regions/?datasource=tranquility")
-        .then(res => res.json())
-        .then(json => {
-            return json;
-        });
+    let payload = await fetchData.get("https://esi.evetech.net/latest/universe/regions/?datasource=tranquility");
 
     return payload;
 }

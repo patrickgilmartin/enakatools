@@ -1,3 +1,5 @@
+import notify from "../../utils/notify";
+
 export const fetchData = {
     get,
     post,
@@ -47,11 +49,12 @@ function reponseHandler(response) {
     let contentType = response.headers.get('Content-Type');
 
     if (contentType) {
-        console.log(contentType)
+        console.log(contentType);
     }
     return response.json();
 }
 
 function errorHandler(error) {
     console.log(error);
+    notify("Attention", error, "danger");
 }

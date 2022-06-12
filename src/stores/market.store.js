@@ -5,3 +5,11 @@ export async function getESIAllMarket() {
 
     return payload;
 }
+
+export function setMarketLocal(marketItems) {
+    let localStore = {
+        marketItems: marketItems
+    }
+    
+    localStorage.setItem('enakatools', localStore);
+}
