@@ -1,5 +1,5 @@
 import lodash from "lodash";
-export const local = {
+export const localStore = {
     get,
     set,
     remove

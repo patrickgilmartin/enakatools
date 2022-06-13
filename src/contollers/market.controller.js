@@ -1,5 +1,6 @@
 import { zipArrays } from '../../helpers/helpers';
 import { getESIAllMarket } from "../../stores/market.store";
+import { localStore } from '../utils/appStorage';
 import getESINamesByID from "./universe.store";
 
 /**
@@ -53,5 +54,5 @@ export async function getMarketItemIDs(itemsArray = []) {
 }
 
 export function storeMarketNamedItems(itemsArray) {
-    
+    localStore.set("market.named.items", itemsArray);
 }

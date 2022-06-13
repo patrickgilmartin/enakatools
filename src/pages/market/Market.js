@@ -13,7 +13,7 @@ function Market() {
     useEffect(() => {
         async function fetchData() {
             const combinedMarketItems = getCombinedMarketItems();
-
+            
             console.log(combinedMarketItems)
             setMarket(combinedMarketItems);
         }
