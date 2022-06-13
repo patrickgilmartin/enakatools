@@ -1,3 +1,4 @@
+import lodash from "lodash";
 export const local = {
     get,
     set,
@@ -5,25 +6,6 @@ export const local = {
 }
 
 let cache = {};
-
-let example = {
-    enakatools: {
-        market:{
-            named: {
-                items: [{}],
-                lastUpdate: ''
-            },
-            groups: {
-                named: [{}],
-                lastUpdate: ''
-            }
-        },
-        regions:[{}],
-        corporations: [{}],
-        characterID: {},
-        structureID: {}
-    }
-}
 
 /**
  * 
@@ -33,9 +15,10 @@ let example = {
  */
 function get(itemName = '', defaultValue = '__noDefaultSupplied__') {
     if (checkForLocalStorage()) {
-        const storageObject = JSON.parse(localStorage.getItem(itemName));
+        const storageObject = JSON.parse(localStorage.getItem('enakatools'));
         //Check if present if not initialize
         if (storageObject === null) {
+            initializeStorage();
             if (defaultValue !== '__noDefaultSupplied__') {
                 set(itemName, defaultValue);
                 return defaultValue;
@@ -43,14 +26,14 @@ function get(itemName = '', defaultValue = '__noDefaultSupplied__') {
             return null;
         }
         //Check for 'value' and if present if not initialize
-        if (storageObject.hasOwnProperty('value')) {
-            if (storageObject.value === null && defaultValue !== '__noDefaultSupplied__') {
+        let property = itemName.includes(".") ? itemName.substr(0, itemName.indexOf(".")) : itemName;
+        if (storageObject.hasOwnProperty(property) || property === "") {
+            if (storageObject[property] === null && defaultValue !== '__noDefaultSupplied__') {
                 set(itemName, defaultValue);
                 return defaultValue;
             }
-            return storageObject.enakatools.value;
+            return property === "" ? storageObject : lodash._.get(storageObject, itemName);
         }
-
         return null;
     } else {
         //If no localStorage available then use a temp cached object
@@ -66,9 +49,13 @@ function get(itemName = '', defaultValue = '__noDefaultSupplied__') {
 
 function set(itemName = '', itemValue) {
     if (checkForLocalStorage()) {
-        const valueToBeSerialized = { value: itemValue };
-        const serializedValue = JSON.stringify(valueToBeSerialized);
-        localStorage.setItem(itemName, serializedValue);
+        let storageObject = get("");
+        itemValue.lastUpdate = new Date().toISOString();
+        lodash._.set(storageObject, itemName, itemValue);
+
+        const serializedValue = JSON.stringify(storageObject);
+        localStorage.setItem("enakatools", serializedValue);
+        return itemValue;
     } else {
         cache[itemName] = itemValue;
     }
@@ -81,6 +68,26 @@ function remove(itemName = '') {
     else if (cache.hasOwnProperty(itemName))
         delete cache[itemName];
     return true;
+}
+
+function initializeStorage() {
+    let initialStorageObject = {
+        market: {
+            named: {
+                items: [{}],
+                lastUpdate: ''
+            },
+            groups: {
+                named: [{}],
+                lastUpdate: ''
+            }
+        },
+        regions: [{}],
+        corporations: [{}],
+        characterID: {},
+        structureID: {}
+    }
+    localStorage.setItem("enakatools", JSON.stringify(initialStorageObject));
 }
 
 export function checkForLocalStorage() {
