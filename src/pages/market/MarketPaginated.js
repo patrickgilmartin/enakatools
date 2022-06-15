@@ -1,18 +1,14 @@
-import Amplify, { API } from 'aws-amplify';
-import { useState, useEffect } from "react";
-import awsconfig from '../../aws-exports';
-import AllMarketTable from "../../components/market/AllTable";
+import React, { useEffect, useState } from 'react';
+import PaginatedTable from '../../components/market/PaginatedTable';
 import { getCombinedMarketItems } from "../../contollers/market.controller";
+import "./style.scss"
 
-Amplify.configure(awsconfig);
-API.configure(awsconfig);
-
-function Market() {
+export default function MarketPaginated() {
     const [market, setMarket] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            const combinedMarketItems = getCombinedMarketItems();
+            const combinedMarketItems = await getCombinedMarketItems();
 
             console.log(combinedMarketItems)
             setMarket(combinedMarketItems);
@@ -33,11 +29,9 @@ function Market() {
             </div>
             <div className="container">
                 <div className="row">
-                    <AllMarketTable market={market} />
+                    <PaginatedTable market={market} />
                 </div>
             </div>
         </main>
-    )
+    );
 }
-
-export default Market;

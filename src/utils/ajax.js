@@ -1,4 +1,4 @@
-import notify from "../../utils/notify";
+import notify from "./notify"
 
 export const fetchData = {
     get,
@@ -11,7 +11,7 @@ function get(url) {
     const options = {
         method: 'GET'
     };
-    return fetchHandler(url, options).then(reponseHandler);
+    return fetchHandler(url, options);
 }
 
 function post(url, body) {
@@ -20,7 +20,7 @@ function post(url, body) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
     };
-    return fetchHandler(url, options).then(reponseHandler);
+    return fetchHandler(url, options);
 }
 
 function put(url, body) {
@@ -29,18 +29,18 @@ function put(url, body) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
     };
-    return fetchHandler(url, options).then(reponseHandler);
+    return fetchHandler(url, options);
 }
 
 function _delete(url) {
     const options = {
         method: 'DELETE'
     };
-    return fetchHandler(url, options).then(reponseHandler);
+    return fetchHandler(url, options);
 }
 
-function fetchHandler(url, options) {
-    fetch(url, options)
+async function fetchHandler(url, options) {
+    return await fetch(url, options)
         .then(reponseHandler)
         .catch(errorHandler);
 }

@@ -1,7 +1,7 @@
-import { zipArrays } from '../../helpers/helpers';
-import { getESIAllMarket } from "../../stores/market.store";
+import { zipArrays } from '../helpers/helpers';
+import { getESIAllMarket } from "../stores/market.store";
 import { localStore } from '../utils/appStorage';
-import getESINamesByID from "./universe.store";
+import getESINamesByID from "../stores/universe.store";
 
 /**
  * Gets all market items from ESI then extracts the type_ids to pass back to ESI to get item 
