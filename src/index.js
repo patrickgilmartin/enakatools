@@ -15,7 +15,6 @@ import App from './pages/app/App';
 
 import reportWebVitals from './reportWebVitals';
 import { Toast, TOAST_THEME, TOAST_PLACEMENT, TOAST_TIMERS } from "bootstrap-toaster";
-import MarketPaginated from './pages/market/MarketPaginated';
 
 Amplify.configure(awsExports);
 
@@ -35,7 +34,6 @@ root.render(
     <Routes>
       <Route index element={<Home />} />
       <Route path="market" element={<Market />} />
-      <Route path="marketPaginated" element={<MarketPaginated />} />
       <Route path="app" element={<App />} />
       <Route path="bootstrap" element={<BootstrapTest />} />
     </Routes>

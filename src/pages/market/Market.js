@@ -1,20 +1,22 @@
 import Amplify, { API } from 'aws-amplify';
 import { useState, useEffect } from "react";
 import awsconfig from '../../aws-exports';
-import AllMarketTable from "../../components/market/AllTable";
+import { MarketSideMenu } from '../../components/market/SideMenu';
 import { getCombinedMarketItems } from "../../contollers/market.controller";
+import { getNamedRegions } from '../../contollers/region.controller';
 
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
 
 function Market() {
     const [market, setMarket] = useState([]);
+    const [region, setRegion] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             const combinedMarketItems = getCombinedMarketItems();
+            const namedRegions = getNamedRegions();
 
-            console.log(combinedMarketItems)
             setMarket(combinedMarketItems);
         }
         fetchData();
@@ -31,11 +33,9 @@ function Market() {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <div className="row">
-                    <AllMarketTable market={market} />
-                </div>
-            </div>
+            <aside id='side'>
+                <MarketSideMenu />
+            </aside>
         </main>
     )
 }

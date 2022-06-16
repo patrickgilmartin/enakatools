@@ -23,7 +23,6 @@ const NavHeader = () => {
                         <div className="navbar-nav">
                             <Link className="nav-link nav-item active" aria-current="page" to="/">Home</Link>
                             <Link className="nav-link nav-item" to="/market">Market</Link>
-                            <Link className="nav-link nav-item" to="/marketPaginated">MarketPaginated</Link>
                             <Link className="nav-link nav-item" to="/app">App</Link>
                             <Link className="nav-link nav-item" to="/bootstrap">Bootstrap</Link>
                         </div>
