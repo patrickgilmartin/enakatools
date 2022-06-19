@@ -12,7 +12,7 @@ const NavHeader = () => {
     return (
         <>
             <nav id="navbar" className="navbar navbar-expand-md navbar-dark fixed-top">
-                <div className="container">
+                <div className="container-fluid">
                     <Link className="navbar-brand p-0 m-0" to="/">
                         <img src='/assets/images/EnakaEnterprisesLight.png' alt="" width="50" height="50" />
                     </Link>
@@ -20,12 +20,28 @@ const NavHeader = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarLinksCollapsable">
-                        <div className="navbar-nav">
-                            <Link className="nav-link nav-item active" aria-current="page" to="/">Home</Link>
-                            <Link className="nav-link nav-item" to="/market">Market</Link>
-                            <Link className="nav-link nav-item" to="/app">App</Link>
-                            <Link className="nav-link nav-item" to="/bootstrap">Bootstrap</Link>
-                        </div>
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/market">Market</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/app">App</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/bootstrap">Bootstrap</Link>
+                            </li>
+                        </ul>
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/signin">Sign In</Link>
+                            </li>
+                            <button id="eve_sso" className="btn">
+                                <img src="/assets/images/eve-sso-login-black-small.png" alt="Eve Sign On" />
+                            </button>
+                        </ul>
                     </div>
                 </div>
             </nav>

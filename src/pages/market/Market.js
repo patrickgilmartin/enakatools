@@ -2,8 +2,8 @@ import Amplify, { API } from 'aws-amplify';
 import { useState, useEffect } from "react";
 import awsconfig from '../../aws-exports';
 import { MarketSideMenu } from '../../components/market/SideMenu';
-import { getCombinedMarketItems } from "../../contollers/market.controller";
-import { getNamedRegions } from '../../contollers/region.controller';
+import { getCombinedMarketItems, getMarketGroups } from "../../contollers/market.controller";
+import { getNamedRegions } from '../../contollers/universe.controller';
 
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
@@ -14,8 +14,12 @@ function Market() {
 
     useEffect(() => {
         async function fetchData() {
-            const combinedMarketItems = getCombinedMarketItems();
-            const namedRegions = getNamedRegions();
+
+            let [combinedMarketItems, namedRegions, marketGroups] = await Promise.all([
+                getCombinedMarketItems(),
+                getNamedRegions(),
+                getMarketGroups()
+            ]);
 
             setMarket(combinedMarketItems);
         }

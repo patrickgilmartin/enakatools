@@ -1,4 +1,4 @@
-import notify from "./notify"
+import notify from "../utils/notify"
 
 export const fetchData = {
     get,

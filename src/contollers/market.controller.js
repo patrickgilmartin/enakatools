@@ -1,7 +1,7 @@
 import { zipArrays } from '../helpers/helpers';
-import { getESIAllMarket } from "../stores/market.store";
-import { localStore } from '../utils/appStorage';
-import getESINamesByID from "../stores/universe.store";
+import { getESIAllMarketGroups, getESIAllMarket, getESIMarketGroupByID } from "../stores/market.store";
+import { localStore } from '../modules/storage';
+import { getESINamesByID } from "../stores/universe.store";
 
 /**
  * Gets all market items from ESI then extracts the type_ids to pass back to ESI to get item 
@@ -51,6 +51,17 @@ export async function getMarketItemIDs(itemsArray = []) {
     }
 
     return returnItems;
+}
+
+export async function getMarketGroups() {
+    const marketGroupIDs = await getESIAllMarketGroups();
+    let marketGroups = [];
+    for (let groupID of marketGroupIDs) {
+        let marketGroup = await getESIMarketGroupByID(groupID);
+        marketGroups.push(marketGroup);
+    }
+    console.log(marketGroups);
+    return marketGroups;
 }
 
 export function storeMarketNamedItems(itemsArray) {

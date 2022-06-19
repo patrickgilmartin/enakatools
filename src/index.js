@@ -12,11 +12,21 @@ import Home from "./pages/shared/Home";
 import Market from './pages/market/Market';
 import BootstrapTest from './pages/BootstrapTest';
 import App from './pages/app/App';
+import Register from './components/Auth/Register';
+import UserPortal from './pages/userPortal/UserPortal';
 
+import PrivateRoute from './components/Auth/PrivateRoute';
 import reportWebVitals from './reportWebVitals';
 import { Toast, TOAST_THEME, TOAST_PLACEMENT, TOAST_TIMERS } from "bootstrap-toaster";
 
 Amplify.configure(awsExports);
+Amplify.configure({
+  Auth: {
+    userPoolId: "us-west-1_EUNmjZpAg",
+    region: "us-west-1",
+    userPoolWebClientId: "3dbs15qe2vvtr5uei3tu8v6pre"
+  }
+});
 
 let toastOptions = {
   maxToasts: 1,
@@ -32,10 +42,14 @@ root.render(
   <BrowserRouter>
     <NavHeader />
     <Routes>
-      <Route index element={<Home />} />
-      <Route path="market" element={<Market />} />
-      <Route path="app" element={<App />} />
-      <Route path="bootstrap" element={<BootstrapTest />} />
+      <Route index component={Home} />
+      <Route component={Market} path="/market" />
+      <Route component={App} path="/app" />
+      <Route component={BootstrapTest} path="/bootstrap" />
+      <Route component={Register} path="/register" />
+      <Route component={UserPortal} path="/signin" />
+      <PrivateRoute path="/admin">
+      </PrivateRoute>
     </Routes>
     <Footer />
   </BrowserRouter>

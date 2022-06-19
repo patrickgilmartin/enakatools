@@ -1,4 +1,4 @@
-import { fetchData } from "../utils/ajax";
+import { fetchData } from "../services/ajax";
 
 
 /**
