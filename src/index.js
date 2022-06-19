@@ -8,14 +8,14 @@ import './index.css';
 import "./sass/main.scss";
 import NavHeader from "./pages/shared/NavHeader";
 import Footer from './pages/shared/Footer';
-import Home from "./pages/shared/Home";
+import Home from "./pages/home/Home";
 import Market from './pages/market/Market';
 import BootstrapTest from './pages/BootstrapTest';
 import App from './pages/app/App';
 import Register from './components/Auth/Register';
 import UserPortal from './pages/userPortal/UserPortal';
 
-import PrivateRoute from './components/Auth/PrivateRoute';
+import PrivateRoute from './components/routes/PrivateRoute';
 import reportWebVitals from './reportWebVitals';
 import { Toast, TOAST_THEME, TOAST_PLACEMENT, TOAST_TIMERS } from "bootstrap-toaster";
 
@@ -42,14 +42,19 @@ root.render(
   <BrowserRouter>
     <NavHeader />
     <Routes>
-      <Route index component={Home} />
-      <Route component={Market} path="/market" />
-      <Route component={App} path="/app" />
-      <Route component={BootstrapTest} path="/bootstrap" />
-      <Route component={Register} path="/register" />
-      <Route component={UserPortal} path="/signin" />
-      <PrivateRoute path="/admin">
-      </PrivateRoute>
+      <Route index element={<Home />} />
+      <Route path="market" element={<Market />} />
+      <Route path="app" element={<App />} />
+      <Route path="bootstrap" element={<BootstrapTest />} />
+      {/* <Route component={Register} path="/register" />
+      <Route component={UserPortal} path="/signin" /> */}
+      {/* <Route
+        path="/admin"
+        element={
+          <PrivateRoute path="/admin">
+          </PrivateRoute>
+        }
+      /> */}
     </Routes>
     <Footer />
   </BrowserRouter>

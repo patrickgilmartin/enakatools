@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import Input from '../../common/Input';
-import { Link, useHistory } from 'react-router-dom';
+import Input from '../common/Input';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
-    let history = useHistory();
+    let history = useNavigate();
     const [user, setUser] = useState({ username: '', password: '', });
 
     const handleInputChange = (event, keyName) => {

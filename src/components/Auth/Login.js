@@ -1,10 +1,10 @@
 import { Auth } from 'aws-amplify';
 import React, { useState } from 'react';
-import { useHistory, Link } from "react-router-dom";
-import Input from './common/Input';
+import { useNavigate, Link } from "react-router-dom";
+import Input from '../common/Input';
 
 const LogIn = () => {
-    let history = useHistory();
+    let history = useNavigate();
     const [user, setUser] = useState({ username: '', password: '' });
 
     const handleInputChange = (event, keyName) => {
@@ -57,7 +57,7 @@ const LogIn = () => {
                 <div className="w-full">
                     <hr />
                     <p className="text-gray-700 pb-2 pt-2 text-sm">Don't have an account?</p>
-                    <Link to={{pathname: '/register'}}
+                    <Link to={{ pathname: '/register' }}
                         className="pt-2 text-sm text-blue-500 hover:text-blue-600">
                         Register
                     </Link>

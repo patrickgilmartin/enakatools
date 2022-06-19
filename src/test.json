@@ -1,12 +1,12 @@
 {
-    "43691": {
-      "adjusted_price": 0,
-      "average_price": 32376666.67,
-      "type_id": 43691
-    },
-    "32772": {
-      "adjusted_price": 875615.8577440927,
-      "average_price": 873774.18,
-      "type_id": 32772
-    }
+  "43691": {
+    "adjusted_price": 0,
+    "average_price": 32376666.67,
+    "type_id": 43691
+  },
+  "32772": {
+    "adjusted_price": 875615.8577440927,
+    "average_price": 873774.18,
+    "type_id": 32772
   }
+}
