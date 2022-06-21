@@ -4,7 +4,7 @@ import "./userPortal.css"
 function SignUp({ user }) {
 
     return (
-        <div id="portal" className="text-center">
+        <div id="portal">
             <Register />
         </div>
     );

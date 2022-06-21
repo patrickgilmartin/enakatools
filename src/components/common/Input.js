@@ -2,18 +2,10 @@ import React from 'react';
 
 const Input = ({ labelName, id, value, type = "text", handleInputChange, inlineID, inlineDescription = "" }) => {
     return (
-        <div className="row g-3 align-items-center py-3">
-            <div className="col-auto">
-                <label for={id} className="col-form-label">{labelName}</label>
-            </div>
-            <div className="col-auto">
-                <input type={type} id={id} value={value} className="form-control" aria-describedby={inlineID} onChange={handleInputChange} />
-            </div>
-            <div className="col-auto">
-                <span id={inlineID} className="form-text">
-                    {inlineDescription}
-                </span>
-            </div>
+        <div class="mb-3">
+            <label for={id} class="form-label">{labelName}</label>
+            <input type={type} id={id} value={value} class="form-control" aria-describedby={inlineID} onChange={handleInputChange} />
+                <div id={inlineID} class="form-text">{inlineDescription}</div>
         </div>
     )
 }

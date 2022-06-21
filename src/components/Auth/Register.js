@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
 import { Link, useNavigate } from 'react-router-dom';
-import Input from '../common/Input';
+import InlineInput from '../common/InlineInput';
 
 const Register = () => {
     let history = useNavigate();
@@ -34,7 +34,7 @@ const Register = () => {
             <div className="container">
                 <h3 className="text-lg">Register</h3>
                 <div class="mb-3">
-                    <Input
+                    <InlineInput
                         labelName='Username:'
                         id="username"
                         value={user.username}
@@ -44,7 +44,7 @@ const Register = () => {
                     />
                 </div>
                 <div class="mb-3">
-                    <Input
+                    <InlineInput
                         labelName='Password:'
                         id="password"
                         type="password"
