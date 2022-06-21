@@ -1,23 +1,26 @@
-import React from 'react';
+import { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 import Amplify from "aws-amplify";
-import awsExports from "./aws-exports";
+import awsExports from "aws-exports";
 
-import './index.css';
-import "./sass/main.scss";
-import NavHeader from "./pages/shared/NavHeader";
-import Footer from './pages/shared/Footer';
-import Home from "./pages/home/Home";
-import Market from './pages/market/Market';
-import BootstrapTest from './pages/BootstrapTest';
-import App from './pages/app/App';
-import Register from './components/Auth/Register';
-import UserPortal from './pages/userPortal/UserPortal';
+import 'index.css';
+import "sass/main.scss";
 
-import PrivateRoute from './components/routes/PrivateRoute';
-import reportWebVitals from './reportWebVitals';
+import NavHeader from "pages/shared/NavHeader";
+import Footer from 'pages/shared/Footer';
+import App from 'App';
+
+import Loader from 'components/common/Loader';
+// import PrivateRoute from './components/routes/PrivateRoute';
+// import ProtectedRoute from './components/routes/ProtectedRoute'; //Authenticated routes
+// import PublicRoute from './components/routes/PublicRoutes';
+
+import reportWebVitals from 'reportWebVitals';
 import { Toast, TOAST_THEME, TOAST_PLACEMENT, TOAST_TIMERS } from "bootstrap-toaster";
+
 
 Amplify.configure(awsExports);
 Amplify.configure({
@@ -39,25 +42,13 @@ Toast.configure(toastOptions);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <Router>
     <NavHeader />
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="market" element={<Market />} />
-      <Route path="app" element={<App />} />
-      <Route path="bootstrap" element={<BootstrapTest />} />
-      {/* <Route component={Register} path="/register" />
-      <Route component={UserPortal} path="/signin" /> */}
-      {/* <Route
-        path="/admin"
-        element={
-          <PrivateRoute path="/admin">
-          </PrivateRoute>
-        }
-      /> */}
-    </Routes>
+    <Suspense fallback={<Loader />}>
+      <App />
+    </Suspense>
     <Footer />
-  </BrowserRouter>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function

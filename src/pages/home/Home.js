@@ -1,4 +1,4 @@
-const Home = () => {
+const Home = ({ user }) => {
   return (
     <div>
       <div className="p-5 mb-4 bg-light rounded-3" id="hero">

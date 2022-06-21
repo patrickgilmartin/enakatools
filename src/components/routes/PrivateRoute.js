@@ -1,10 +1,10 @@
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 
 function PrivateRoute({ children, isAuthenticated, ...rest }) {
     return (
         <Route {...rest} render={({ location }) => (
             isAuthenticated ? (children) :
-                (<Redirect to={{ pathname: '/login', state: { from: location } }} />)
+                (<Navigate to={{ pathname: '/login', state: { from: location } }} />)
         )} />
     );
 }

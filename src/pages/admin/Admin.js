@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Admin() {
+function Admin({ user }) {
 
   return (
     <div>

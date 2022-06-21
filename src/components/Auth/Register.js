@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import Input from '../common/Input';
+import Input from 'components/common/Input';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {

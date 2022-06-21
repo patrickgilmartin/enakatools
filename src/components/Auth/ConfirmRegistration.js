@@ -1,6 +1,6 @@
 import { Auth } from 'aws-amplify';
 import React, { useState } from 'react';
-import Input from '../../common/Input';
+import Input from 'common/Input';
 import { Link, useHistory } from "react-router-dom";
 
 const ConfirmRegister = () => {

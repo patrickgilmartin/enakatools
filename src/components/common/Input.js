@@ -2,7 +2,7 @@ import React from 'react';
 
 const Input = ({ labelName, id, value, type = "text", handleInputChange, inlineID, inlineDescription = "" }) => {
     return (
-        <div className="row g-3 align-items-center">
+        <div className="row g-3 align-items-center py-3">
             <div className="col-auto">
                 <label for={id} className="col-form-label">{labelName}</label>
             </div>

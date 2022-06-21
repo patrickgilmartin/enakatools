@@ -1,12 +1,12 @@
-import SigninPage from "../../components/Auth/Login"
+import LogIn from "components/Auth/Login"
+import Register from 'components/Auth/Register';
+import "pages/userPortal/userPortal.css"
 
-function UserPortal() {
+function UserPortal({ user }) {
 
     return (
-        <div className="signIn">
-            <header className="signIn-header">
-                <SigninPage />
-            </header>
+        <div id="portal" className="text-center">
+            <LogIn />
         </div>
     );
 }

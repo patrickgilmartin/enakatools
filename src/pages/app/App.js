@@ -1,8 +1,8 @@
 import Amplify, { API, Auth } from 'aws-amplify';
 import React, { useState } from 'react';
-import awsconfig from '../../aws-exports';
-import logo from './logo.svg';
-import './App.css';
+import awsconfig from 'aws-exports';
+import logo from 'pages/app/logo.svg';
+import 'pages/app/App.css';
 
 Amplify.configure(awsconfig);
 API.configure(awsconfig);
@@ -11,7 +11,7 @@ Auth.configure(awsconfig);
 const myAPI = "eveAPI"
 const path = '/items';
 
-function App() {
+function App({ user }) {
 
   const [input, setInput] = useState("")
   const [items, setItems] = useState([])

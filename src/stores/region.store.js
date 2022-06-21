@@ -1,5 +1,4 @@
-import { fetchData } from "../services/ajax";
-
+import { fetchData } from "services/ajax";
 
 /**
  * Returns a set of all region IDs.
