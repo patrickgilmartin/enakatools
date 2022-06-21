@@ -1,7 +1,7 @@
 import { Auth } from 'aws-amplify';
 import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
-import Input from 'components/common/Input';
+import Input from '../common/Input';
 
 const LogIn = () => {
     let history = useNavigate();

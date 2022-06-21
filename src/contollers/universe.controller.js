@@ -1,6 +1,6 @@
-import { localStore } from 'modules/storage';
-import { getESICategoryByID, getESICategoryIDs, getESINamesByID } from "stores/universe.store";
-import getESIRegions from 'stores/region.store';
+import { localStore } from '../modules/storage';
+import { getESICategoryByID, getESICategoryIDs, getESINamesByID } from "../stores/universe.store";
+import getESIRegions from '../stores/region.store';
 
 /**
  * 

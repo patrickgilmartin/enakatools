@@ -1,8 +1,8 @@
 import Amplify, { API } from 'aws-amplify';
 import { useState, useEffect } from "react";
 import awsconfig from 'aws-exports';
-import AllMarketTable from "components/market/AllTable";
-import { getCombinedMarketItems } from "contollers/market.controller";
+import AllMarketTable from "../../components/market/AllTable";
+import { getCombinedMarketItems } from "../../contollers/market.controller";
 
 Amplify.configure(awsconfig);
 API.configure(awsconfig);

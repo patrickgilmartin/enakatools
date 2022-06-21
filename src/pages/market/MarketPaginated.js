@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import PaginatedTable from 'components/market/PaginatedTable';
-import { getCombinedMarketItems } from "contollers/market.controller";
-import "style.scss"
+import PaginatedTable from '../../components/market/PaginatedTable';
+import { getCombinedMarketItems } from "../../contollers/market.controller";
+import "./style.scss"
 
 export default function MarketPaginated() {
     const [market, setMarket] = useState([]);

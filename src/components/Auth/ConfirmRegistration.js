@@ -1,7 +1,7 @@
 import { Auth } from 'aws-amplify';
 import React, { useState } from 'react';
-import Input from 'common/Input';
 import { Link, useHistory } from "react-router-dom";
+import Input from '../common/Input';
 
 const ConfirmRegister = () => {
   let history = useHistory();
@@ -18,7 +18,7 @@ const ConfirmRegister = () => {
     try {
       await Auth.confirmSignUp(user.username, user.authenticationCode);
       console.log('success confirm sign up');
-      history.push('./log-in')
+      history.push('/log-in')
     } catch (error) {
       console.log('error', error);
     }

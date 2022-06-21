@@ -4,21 +4,18 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import Amplify from "aws-amplify";
-import awsExports from "aws-exports";
+import awsExports from "./aws-exports";
 
-import 'index.css';
-import "sass/main.scss";
+import './index.css';
+import "./sass/main.scss";
 
-import NavHeader from "pages/shared/NavHeader";
-import Footer from 'pages/shared/Footer';
-import App from 'App';
+import NavHeader from "./pages/shared/NavHeader";
+import Footer from './pages/shared/Footer';
+import App from './App';
 
-import Loader from 'components/common/Loader';
-// import PrivateRoute from './components/routes/PrivateRoute';
-// import ProtectedRoute from './components/routes/ProtectedRoute'; //Authenticated routes
-// import PublicRoute from './components/routes/PublicRoutes';
+import Loader from './components/common/Loader';
 
-import reportWebVitals from 'reportWebVitals';
+import reportWebVitals from './reportWebVitals';
 import { Toast, TOAST_THEME, TOAST_PLACEMENT, TOAST_TIMERS } from "bootstrap-toaster";
 
 
