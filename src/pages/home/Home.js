@@ -1,6 +1,6 @@
 const Home = ({ user }) => {
   return (
-    <div>
+    <div className="mb-5">
       <div className="p-5 mb-4 bg-light rounded-3" id="hero">
         <div className="container-fluid text-center py-5">
           <h1 className="display-1 fw-bold">Enaka Tools</h1>
@@ -19,7 +19,7 @@ const Home = ({ user }) => {
         <p className="col-md-12 fs-4">The goal for this site was to not only provide good tools that are helpful and straight forward, but also a site that looks the part. Too often sites seem thrown together with little thought or care and I wanted something more. Something that you feel could be part of the game and helpful as well. </p>
         <p className="col-md-12 fs-4">I eventually want to include a forum so people can provide feedback or just discuss game related things. Be patient and keep your eyes on the site as it will evolve over the next few months. I may not have everything right in stats or figures, so please, if you notice an error in calculations please let me know through in game mail.</p>
       </div>
-      <div className="container">
+      <div className="container pb-5 mb-5">
         <div className="row">
           <div className="col-md-6">
             <div className="h-100 p-5 text-white bg-dark rounded-3">
