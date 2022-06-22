@@ -1,4 +1,4 @@
-export const MarketSideMenu = () => (
+const MarketSideMenu = () => (
     <div className='market-groups'>
         <ul>
             <li className="collapse-item collapse-item-group depth-0">
@@ -128,3 +128,5 @@ export const MarketSideMenu = () => (
         </ul>
     </div>
 )
+
+export default MarketSideMenu;
