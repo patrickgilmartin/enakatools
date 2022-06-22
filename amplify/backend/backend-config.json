@@ -1,34 +1,25 @@
 {
   "function": {
-    "eveLambda": {
+    "enakaToolsLambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "api": {
-    "eveAPI": {
+    "enakaToolsAPI": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "eveLambda",
+          "resourceName": "enakaToolsLambda",
           "attributes": [
             "Name",
             "Arn"
           ]
         }
       ]
-    }
-  },
-  "auth": {
-    "enakatools96c842bc": {
-      "service": "Cognito",
-      "serviceType": "imported",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": true
     }
   }
 }

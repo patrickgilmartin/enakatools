@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"8.4.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"8.5.1\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "eveLambda",
+            "enakaToolsLambda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "eveLambda",
+                  "enakaToolsLambda",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "enakatoolsLambdaRolef99df694",
+            "enakatoolsLambdaRole4fd26b70",
             {
               "Fn::Join": [
                 "",
                 [
-                  "enakatoolsLambdaRolef99df694",
+                  "enakatoolsLambdaRole4fd26b70",
                   "-",
                   {
                     "Ref": "env"

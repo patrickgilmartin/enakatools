@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "function": {
-        "eveLambda": {
+        "enakaToolsLambda": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -8,7 +8,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "eveAPI": {
+        "enakaToolsAPI": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"

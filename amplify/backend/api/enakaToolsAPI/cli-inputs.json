@@ -1,9 +1,9 @@
 {
   "version": 1,
   "paths": {
-    "/market": {
-      "name": "/market",
-      "lambdaFunction": "eveLambda",
+    "/regions": {
+      "name": "/regions",
+      "lambdaFunction": "enakaToolsLambda",
       "permissions": {
         "setting": "open"
       }

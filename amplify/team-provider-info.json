@@ -1,36 +1,21 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-enakatools-dev-200354-authRole",
-      "UnauthRoleArn": "arn:aws:iam::754524628512:role/amplify-enakatools-dev-200354-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::754524628512:role/amplify-enakatools-dev-200354-authRole",
+      "AuthRoleName": "amplify-enakatools-dev-202106-authRole",
+      "UnauthRoleArn": "arn:aws:iam::754524628512:role/amplify-enakatools-dev-202106-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::754524628512:role/amplify-enakatools-dev-202106-authRole",
       "Region": "us-west-1",
-      "DeploymentBucketName": "amplify-enakatools-dev-200354-deployment",
-      "UnauthRoleName": "amplify-enakatools-dev-200354-unauthRole",
-      "StackName": "amplify-enakatools-dev-200354",
-      "StackId": "arn:aws:cloudformation:us-west-1:754524628512:stack/amplify-enakatools-dev-200354/40723cd0-e6cf-11ec-bf79-06197b2dc565",
-      "AmplifyAppId": "d3l20z3c6ipry5"
+      "DeploymentBucketName": "amplify-enakatools-dev-202106-deployment",
+      "UnauthRoleName": "amplify-enakatools-dev-202106-unauthRole",
+      "StackName": "amplify-enakatools-dev-202106",
+      "StackId": "arn:aws:cloudformation:us-west-1:754524628512:stack/amplify-enakatools-dev-202106/fa1ce7e0-f1d1-11ec-8012-06352121b125",
+      "AmplifyAppId": "d1mr9dfu7ksgxq"
     },
     "categories": {
       "function": {
-        "eveLambda": {
-          "deploymentBucketName": "amplify-enakatools-dev-200354-deployment",
-          "s3Key": "amplify-builds/eveLambda-6d2f44444e7034477452-build.zip"
-        }
-      },
-      "auth": {
-        "enakatools96c842bc": {
-          "userPoolId": "us-west-1_EUNmjZpAg",
-          "userPoolName": "amplify_backend_manager_dd1cfhwx2xr99",
-          "webClientId": "3dbs15qe2vvtr5uei3tu8v6pre",
-          "nativeClientId": "3dbs15qe2vvtr5uei3tu8v6pre",
-          "identityPoolId": "us-west-1:cbc6b2d7-f836-44b2-83f7-304215ad0c84",
-          "identityPoolName": "amplify_backend_manager_dd1cfhwx2xr99",
-          "allowUnauthenticatedIdentities": true,
-          "authRoleArn": "arn:aws:iam::754524628512:role/us-west-1_EUNmjZpAg-authRole",
-          "authRoleName": "us-west-1_EUNmjZpAg-authRole",
-          "unauthRoleArn": "arn:aws:iam::754524628512:role/amplify-enakatools-dev-200354-unauthRole",
-          "unauthRoleName": "amplify-enakatools-dev-200354-unauthRole"
+        "enakaToolsLambda": {
+          "deploymentBucketName": "amplify-enakatools-dev-202106-deployment",
+          "s3Key": "amplify-builds/enakaToolsLambda-4f69644e684334434c66-build.zip"
         }
       }
     }
