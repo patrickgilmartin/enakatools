@@ -6,20 +6,5 @@
       "service": "Lambda"
     }
   },
-  "api": {
-    "enakaToolsAPI": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "enakaToolsLambda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    }
-  }
+  "api": {}
 }
