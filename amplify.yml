@@ -1,0 +1,28 @@
+version: 1
+env:
+  variables:
+    VERSION_AMPLIFY: 8.5.1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - npm i -g @aws-amplify/cli@${VERSION_AMPLIFY}
+    build:
+      commands:
+        - '# Execute Amplify CLI with the helper script'
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
