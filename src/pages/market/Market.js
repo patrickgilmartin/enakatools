@@ -1,6 +1,7 @@
 import Amplify, { API } from 'aws-amplify';
 import { useState, useEffect } from "react";
 import awsconfig from '../../aws-exports';
+import MarketSideMenu from '../../components/market/SideMenu';
 import { getCombinedMarketItems, getMarketGroups } from "../../contollers/market.controller";
 import { getNamedRegions } from '../../contollers/universe.controller';
 
@@ -37,7 +38,7 @@ function Market({ user }) {
                 </div>
             </div>
             <aside id='side'>
-                
+                <MarketSideMenu />
             </aside>
         </main>
     )
